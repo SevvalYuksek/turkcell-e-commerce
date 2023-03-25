@@ -1,6 +1,6 @@
 package kodlama.io.turkcellecommerce.business.abstracts;
 
-import kodlama.io.turkcellecommerce.entities.concretes.Product;
+import kodlama.io.turkcellecommerce.entities.Product;
 
 import java.util.List;
 

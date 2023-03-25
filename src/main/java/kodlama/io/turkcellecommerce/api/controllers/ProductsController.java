@@ -1,20 +1,18 @@
 package kodlama.io.turkcellecommerce.api.controllers;
 
 import kodlama.io.turkcellecommerce.business.abstracts.ProductService;
-import kodlama.io.turkcellecommerce.entities.concretes.Product;
+import kodlama.io.turkcellecommerce.entities.Product;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/products")
 public class ProductsController {
     private final ProductService service;
-
-    public ProductsController(ProductService service) {
-        this.service = service;
-    }
 
     @GetMapping
     public List<Product> getAll(){
@@ -25,11 +23,6 @@ public class ProductsController {
     public Product getById(@PathVariable int id){
         return service.getById(id);
     }
-
-//    @GetMapping("/")
-//    public Product findById(@RequestParam int id){
-//        return service.getById(id);
-//    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
